@@ -1,14 +1,4 @@
-# Use an official base image (for example, Ubuntu or Alpine)
-FROM ubuntu:latest
-
-# Set up the Docker repository for Azure CLI
-RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/azure-cli.list
-
-# Update the package list
-RUN apt-get update
-
-# Install the Azure CLI with the desired version
-RUN apt-get install -y --allow-downgrades azure-cli=2.49.0-1~focal
+FROM mcr.microsoft.com/azure-cli
 
 # Set the working directory
 WORKDIR /app
