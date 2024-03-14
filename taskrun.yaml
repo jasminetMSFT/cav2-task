@@ -1,0 +1,6 @@
+version: v1.1.0
+steps:
+  - build: -t $Registry/cav2-local:$ID -f Dockerfile .
+  - push:
+    - $Registry/cav2-local:$ID
+  - cmd: $Registry/cav2-local:$ID
