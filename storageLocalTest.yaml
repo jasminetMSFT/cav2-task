@@ -2,5 +2,9 @@ version: v1.1.0
 steps:
   - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
   - push: [jttest.azurecr.io/storagetest:latest]
+  - cmd: jttest.azurecr.io/storagetest:latest
+    volumeMounts:
+      - name: /workspace
+        mountPath: .
   - cmd: bash echo "current yaml directory is $PWD"
   - cmd: bash cat my_test_file.txt
