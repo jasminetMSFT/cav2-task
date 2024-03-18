@@ -4,7 +4,7 @@ steps:
   - push: [jttest.azurecr.io/storagetest:latest]
   - cmd: bash mkdir output
   - cmd: bash ls
-  - cmd: docker run -v /workspace/output:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
+  - cmd: docker run -v /workspace/output/:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
   - cmd: bash ls
   - cmd: bash find . -type f
   - cmd: bash cat storage.Dockerfile
