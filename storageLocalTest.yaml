@@ -2,11 +2,11 @@ version: v1.1.0
 steps:
   # - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
   # - push: [jttest.azurecr.io/storagetest:latest]
-  #- cmd: docker run -v %home:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
+  - cmd: docker run -v /acb/home:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
   - cmd: bash echo 'Your text here' > directfile.txt
   - cmd: bash echo ~
   - cmd: bash ls
   - cmd: bash find . -type f
   - cmd: bash cat /workspace/storage.Dockerfile
   - cmd: bash echo "current yaml directory is $PWD"
-  #- cmd: bash cat %home/file.txt
+  - cmd: bash cat /acb/home/file.txt
