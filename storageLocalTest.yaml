@@ -2,6 +2,7 @@ version: v1.1.0
 steps:
   - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
   - push: [jttest.azurecr.io/storagetest:latest]
-  - cmd: acr run --registry jttest --cmd 'jttest.azurecr.io/storagetest:latest' --set source=/workspace:/workspace /dev/null
+  - cmd: az login
+  - cmd: az acr run --registry jttest --cmd 'jttest.azurecr.io/storagetest:latest' --set source=/workspace:/workspace /dev/null
   - cmd: bash echo "current yaml directory is $PWD"
   - cmd: bash cat my_test_file.txt
