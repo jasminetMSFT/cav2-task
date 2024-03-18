@@ -5,7 +5,7 @@ steps:
   - cmd: bash cat /usr/local/bin/docker-entrypoint.sh
   - cmd: -v /acb/home/report:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
   - cmd: bash echo 'Your text here' > directfile.txt
-  - cmd: bash echo ~ && bash pwd
+  #- cmd: bash echo ~ && pwd
   - cmd: bash ls
   - cmd: bash find . -type f
   - cmd: bash cat /workspace/storage.Dockerfile
