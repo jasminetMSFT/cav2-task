@@ -2,8 +2,9 @@ version: v1.1.0
 steps:
   # - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
   # - push: [jttest.azurecr.io/storagetest:latest]
+  - cmd: bash cd ~ && ls
   - cmd: bash cat /usr/local/bin/docker-entrypoint.sh
-  - cmd: -v /acb/home/report:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
+  - cmd: docker run -v /acb/home/report:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
   - cmd: bash echo 'Your text here' > directfile.txt
   #- cmd: bash echo ~ && pwd
   - cmd: bash ls
