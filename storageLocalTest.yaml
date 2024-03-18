@@ -1,7 +1,7 @@
 version: v1.1.0
 steps:
-  - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
-  - push: [jttest.azurecr.io/storagetest:latest]
+  # - build: -t jttest.azurecr.io/storagetest:latest -f storage.Dockerfile .
+  # - push: [jttest.azurecr.io/storagetest:latest]
   - cmd: docker run -v /workspace/:/home/test/report --name test0318 jttest.azurecr.io/storagetest:latest
   - cmd: bash echo 'Your text here' > directfile.txt
   - cmd: bash ls
