@@ -1,6 +1,6 @@
 version: v1.1.0
 steps:
-  - build: -t jttest.azurecr.io/cav2-local:$ID -f Dockerfile .
+  - build: -t checkaccessloadtest.azurecr.io/cav2-local:$ID -f Dockerfile .
   - push:
-    - jttest.azurecr.io/cav2-local:$ID
-  - cmd: jttest.azurecr.io/cav2-local:$ID
+    - checkaccessloadtest.azurecr.io/cav2-local:$ID
+  - cmd: checkaccessloadtest.azurecr.io/cav2-local:$ID
